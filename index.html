@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Interés Acumulado</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <img src="./assets/girl.png" alt="personaje" class="imgPri">
+    <section>
+        <h1 class="title">Calculadora Interés compuesto</h1>
+        <div class="cursor"></div>
+
+        <div class="calculator">
+            <div>
+                <label for="cifraInicial">Capital a invertir:</label>
+                <input id="cifraInicial" placeholder="Cifra inicial">
+
+                <label for="tasaInteres">Porcentaje de Interés Anual:</label>
+                <input id="tasaInteres" placeholder="Tasa de interés anual">  
+
+                <label for="tasaReinversion">Porcentaje de Reinversión Mensual:</label>
+                <input id="tasaReinversion" placeholder="Tasa de reinversión mensual">  
+
+                <label for="periodoMeses">Periodo en Meses:</label>
+                <input id="periodoMeses" placeholder="Periodo en meses">
+            </div>
+            <button class="btn rounded" onclick="calcularInteresAcumulado()">Calcular</button>
+            <div class="contResult">
+                <div>
+                    <div class="resultados">El total acumulado es:</div><div id="resultado"></div>
+                </div>
+                <div>
+                  <div class="resultados">El interés acumulado es:</div><div id="interes"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="imgs">
+        <img src="./assets/brillo.png" alt="brillo" class="imgTer">
+        <img src="./assets/money.png" alt="dinero" class="imgSec">
+    </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
