@@ -1,26 +1,3 @@
-// function calcularInteres() {
-//   const cifraInicial = parseFloat(document.getElementById('cifraInicial').value);
-//   const tasaInteresAnual = parseFloat(document.getElementById('tasaInteres').value);
-//   const tasaReinversionMensual = parseFloat(document.getElementById('tasaReinversion').value);
-//   const periodoMeses = parseInt(document.getElementById('periodoMeses').value);
-
-//   const tasaInteresDecimal = tasaInteresAnual / 100;
-//   const tasaReinversionDecimal = tasaReinversionMensual / 100;
-
-//   let totalInteresAcumulado = 0;
-//   let cifraActual = cifraInicial;
-
-//   for (let mes = 1; mes <= periodoMeses; mes++) {
-//     const interesMensual = cifraActual * (tasaInteresDecimal / 12);
-//     const reinversionMensual = interesMensual * tasaReinversionDecimal;
-
-//     totalInteresAcumulado += interesMensual + reinversionMensual;
-//     cifraActual += interesMensual + reinversionMensual;
-//   }
-
-//   document.getElementById('resultado').innerHTML = `El total de interés acumulado es: $${totalInteresAcumulado.toFixed(2)}`;
-// }
-
 // Función para calcular el interés acumulado
 function calcularInteresAcumulado() {
   const cifraInicial = parseFloat(document.getElementById('cifraInicial').value);
@@ -41,8 +18,8 @@ function calcularInteresAcumulado() {
     interes += reinversionMensual;
   } 
 
-  document.getElementById('resultado').innerHTML = cifraActual.toFixed(2);
-  document.getElementById('interes').innerHTML = interes.toFixed(2);
+  document.getElementById('resultado').innerHTML = `$ ${cifraActual.toFixed(2)}`;
+  document.getElementById('interes').innerHTML = `$ ${interes.toFixed(2)}`;
 }
 
 // Funcion cursor

@@ -5,7 +5,7 @@
 
 body {
     margin: 1vw;
-    padding: 3vw;
+    padding: 2vw;
     font-family: "Lato", sans-serif;
     color: #2c2c2f;
     background-color: #2c2c2f;
@@ -99,7 +99,7 @@ button:hover ~ .cursor {
 
 .calculator div {
     width: 100%;
-    margin: 0 0 20px;
+    margin: 0 0 5px;
 }
   
 label {
@@ -123,7 +123,7 @@ input:focus-visible {
 }
   
 .btn {
-    margin: 15px auto 40px;
+    margin: 40px auto 45px;
     border: none;
     padding: 10px 30px;
     font-size: 20px;
