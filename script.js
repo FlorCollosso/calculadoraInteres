@@ -76,6 +76,3 @@ document.addEventListener('mousemove', function(e) {
   customCursor.style.left = e.clientX + 'px';
   customCursor.style.top = e.clientY + 'px';
 });
-
-
-
