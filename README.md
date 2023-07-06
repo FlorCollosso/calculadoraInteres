@@ -4,4 +4,8 @@ Esta aplicación te permite calcular los intereses generados mediante la reinver
 
 ## 📸 Demostración
 
+<<<<<<< HEAD
 ![image](https://github.com/FlorCollosso/calculadoraInteres/blob/gh-pages/assets/Captura.PNG)
+=======
+![image](https://github.com/FlorCollosso/calculadoraInteres/blob/main/assets/Captura.PNG)
+>>>>>>> 17f2ed633468c859eb277fb63b4c062628f237dc
