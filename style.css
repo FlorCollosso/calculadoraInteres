@@ -27,7 +27,7 @@ body {
 
 .imgPri {
     height: 5.5vw;
-    top: 40vh;
+    top: 50vh;
     left: 4vw;
     transform: rotateZ(270deg);
     position: relative;
