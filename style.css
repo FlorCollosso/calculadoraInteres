@@ -1,7 +1,6 @@
 * {
     --colorButton: #37c445;
     --colorTitle: #f41f6d;
-    cursor: none;
     margin: 0;
 }
 
@@ -27,16 +26,18 @@ body {
 }
 
 .imgPri {
-    height: 5vw;
-    top: 25vw;
-    left: 1vw;
+    height: 5.5vw;
+    top: 40vh;
+    left: 4vw;
     transform: rotateZ(270deg);
     position: relative;
 }
 
 .imgSec {
-    height: 8vw;
-    top: 5vw;
+    height: 6vw;
+    top: 10vh;
+    right: 3.7vw;
+    transform: rotateZ(-270deg);
     position: relative;
 }
 
@@ -278,9 +279,30 @@ input:focus-visible {
   
   /* Estilos para tablets en posición horizontal y dispositivos de tamaño mediano */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .imgPri {
+        height: 12vw;
+        width: 26vw;
+        top: 2vw;
+        left: 20vw;
+        transform: rotateZ(0deg);
+        position: relative;
+    }
+    
+    .imgSec {
+        height: 12vw;
+        width: 26vw;
+        top: -2vw;
+        left: 45vw;
+        position: relative;
+        transform: rotateZ(-180deg);
+    }
+
     .containerPrincipal {
-        top: 18%;
         width: 100%;
+        left: 9%;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .containerPrincipal > div {
@@ -303,26 +325,33 @@ input:focus-visible {
   /* Estilos para teléfonos y dispositivos de menor tamaño */
 @media only screen and (max-width: 767px) {
     .imgPri {
-        height: 5vw;
-        top: 60vh;
-        left: 1vw;
-        transform: rotateZ(270deg);
+        height: 15vw;
+        width: 29vw;
+        top: 2.5vw;
+        left: 25vw;
+        transform: rotateZ(0deg);
         position: relative;
     }
     
     .imgSec {
-        height: 8vw;
-        top: 10vh;
+        height: 15vw;
+        width: 29vw;
+        top: -2.5vw;
+        left: 50vw;
         position: relative;
+        transform: rotateZ(-180deg);
     }
 
     .containerPrincipal {
-        top: 18%;
         width: 100%;
+        left: 5%;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .containerPrincipal > div {
-        width: 75%;
+        width: 85%;
         padding: 3vw;
     }
 
@@ -344,7 +373,7 @@ input:focus-visible {
     }
       
     .btn {
-        margin: 20px auto 20px;
+        margin: 20px auto 30px;
         padding: 10px 30px;
         font-size: 12px;
     }
@@ -352,6 +381,11 @@ input:focus-visible {
     .contResult {
         display: flex;
         flex-direction: column;
+    }
+
+    .contResult div {
+        display: flex;
+        justify-content: center;
     }
 
     .resultados {

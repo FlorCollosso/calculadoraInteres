@@ -69,10 +69,14 @@ btn.addEventListener('click', () => {
 
 // Función cursor
 
-const cursor = document.getElementById('cursor');
+var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
-document.addEventListener('mousemove', function(e) {
-  var customCursor = document.querySelector('.cursor');
-  customCursor.style.left = e.clientX + 'px';
-  customCursor.style.top = e.clientY + 'px';
-});
+if (!isTouchDevice) {  
+  document.addEventListener('mousemove', function(e) {
+    var customCursor = document.querySelector('.cursor');
+    customCursor.style.left = e.clientX + 'px';
+    customCursor.style.top = e.clientY + 'px';
+  });
+
+  document.getElementsByTagName('*').style.cursor = 'none';
+}
