@@ -11,21 +11,26 @@
         <div>
             <h1 class="title">Calculadora Interés compuesto</h1>
             <div class="calculator">
-                <form id="form">
+                <form id="form" onsubmit="event.preventDefault();">
                     <label for="cifraInicial">Capital a invertir:</label>
-                    <input id="cifraInicial" placeholder="Cifra inicial"  maxlength="9">
-                    <div id="error"></div>
+                    <input id="cifraInicial" placeholder="Cifra inicial"  maxlength="9" type="number" onchange="clearError(this)">
+                    <span class="error-message"></span>
     
                     <label for="tasaInteres">Porcentaje de Interés Anual:</label>
-                    <input id="tasaInteres" placeholder="Tasa de interés anual">  
+                    <input id="tasaInteres" placeholder="Tasa de interés anual" maxlength="3" type="number" onchange="clearError(this)">
+                    <span class="error-message"></span>  
     
                     <label for="tasaReinversion">Porcentaje de Reinversión Mensual:</label>
-                    <input id="tasaReinversion" placeholder="Tasa de reinversión mensual">  
+                    <input id="tasaReinversion" placeholder="Tasa de reinversión mensual" maxlength="3" type="number" onchange="clearError(this)">
+                    <span class="error-message"></span>  
     
                     <label for="periodoMeses">Periodo en Meses:</label>
-                    <input id="periodoMeses" placeholder="Periodo en meses">
+                    <input id="periodoMeses" placeholder="Periodo en meses" maxlength="3" type="number" onchange="clearError(this)">
+                    <span class="error-message"></span>
+                    <div id="containerBtn">
+                    <button class="btn" id="btn" onclick="calcularInteresAcumulado()" type="submit">Calcular</button>
+                    </div>
                 </form>
-                <button class="btn" id="btn" onclick="calcularInteresAcumulado()" type="submit">Calcular</button>
                 <div class="contResult">
                     <div>
                         <div class="resultados">Total acumulado:</div><div id="resultado">$ 0</div>
@@ -41,13 +46,24 @@
         </div>
         <img src="./assets/gatito.gif" alt="Gatito" class="imgSec">
     </section>
-    <section id="containerInfo" onclick="toggleOff()">
+    <section id="containerInfo">
         <div class="info">
             <h2>Interés mes a mes</h2>
-            <div id="infoText">
-                
+            <div class="tableContainer">
+                <table id="infoTable">
+                    <thead>
+                        <tr>
+                          <th>Mes Nº</th>
+                          <th>Interés</th>
+                          <th>Capital Retirado</th>
+                        </tr>
+                    </thead> 
+                    <tbody id="datosTable">
+                    </tbody>
+                </table>
             </div>
         </div>
+        <div id="background" onclick="toggleOff()"></div>
     </section>
 
   <script src="./script.js"></script>

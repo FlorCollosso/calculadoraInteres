@@ -2,6 +2,7 @@
     --colorButton: #37c445;
     --colorTitle: #f41f6d;
     margin: 0;
+    cursor: none;
 }
 
 body {
@@ -23,6 +24,12 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .imgPri {
@@ -96,7 +103,7 @@ h1 {
     transition: transform 0.3s ease; 
     transform: translate(-50%, -50%);
     mix-blend-mode: difference;
-    z-index: 1;
+    z-index: 3;
     pointer-events: none;
 }
   
@@ -137,9 +144,22 @@ input {
 input:focus-visible {
     outline: none;
 }
+
+.error-input {
+    border-color: red;
+}
+
+.error-input::placeholder {
+    color: red;
+}
+
+#containerBtn {
+    display: flex;
+    justify-content: center;
+}
   
 .btn {
-    margin: 45px auto 45px;
+    margin: 45px auto 35px;
     border: none;
     padding: 10px 30px;
     font-size: 20px;
@@ -157,14 +177,10 @@ input:focus-visible {
 
 .contResult {
     display: flex;
-}
-
-.contResult div{
     text-align: center;
 }
 
 .resultados {
-    margin-top: 20px;
     font-weight: 600;
     color: #646464;
 }
@@ -174,6 +190,7 @@ input:focus-visible {
     font-size: 1.5rem;
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin-top: 15px;
 }
 
 #interes {
@@ -181,6 +198,7 @@ input:focus-visible {
     font-size: 1.5rem;
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin-top: 15px;
 }
 
 #mesAMes {
@@ -189,6 +207,7 @@ input:focus-visible {
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     transition: transform 1s ease-in-out;
+    margin-top: 15px;
 }
 
 #mesAMes:hover {
@@ -203,36 +222,95 @@ input:focus-visible {
     align-items: center;
     position: absolute;
     top: 0;
+    z-index: 2;
+}
+
+#background {
     background-color: #010101ca;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .info{
-    width: 40vh;
-    height: 50%;
+    width: fit-content;
+    max-width: 70vw;
+    height: fit-content;
+    max-height: 60vh;
     padding: 2vw;
     background-color: #ECECEC;
     margin: 2vw;
     border-radius: 30px;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    position: absolute;
+    z-index: 2;
 }
 
-#infoText {
-    overflow: auto;
-    max-height: 86%;
+#infoTable {
+    width: 100%;
+    border-collapse: collapse;
+    max-height: 50vh;
+    overflow-y: scroll;
 }
 
-.infoText::-webkit-scrollbar {
-    width: 15px;
+.tableContainer {
+    max-height: 50vh;
+    overflow-y: scroll;
+    padding: 0 1vw;
 }
 
-.infoText::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s;
+.tableContainer::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px; 
 }
 
-.infoText::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1);
+.tableContainer::-webkit-scrollbar-thumb {
+  background-color: #88888855;
+  border-radius: 50px;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+  background-color: #ECECEC;
+}
+
+.tableContainer::-webkit-scrollbar-button {
+  display: none;
+}
+
+#infoTable th,
+#infoTable td {
+    padding: 15px 22px;
+    text-align: center;
+}
+
+#datosTable tr:last-child td:first-child{
+    border-radius: 0 0 0 20px;
+}
+
+#datosTable tr:last-child td:last-child{
+    border-radius: 0 0 20px 0;
+}
+
+#infoTable thead {
+    background-color: #eadee3;
+    color: #5c3442;
+}
+
+#infoTable thead th:first-child{
+    border-radius: 20px 0 0 0;
+}
+
+#infoTable thead th:nth-child(3){
+    border-radius: 0 20px 0 0;
+}
+  
+#infoTable tbody tr:nth-child(even) {
+    background-color: #eadee3;
+}
+  
+#infoTable tbody tr:hover {
+    background-color: #fcd4d4;
 }
 
 .info h2 {
@@ -240,16 +318,6 @@ input:focus-visible {
     font-size: 25px;
     margin: 0 0 20px;
     text-align: center;
-}
-
-.info h3 {
-    background-color: #cfcfcf;
-    padding: 10px;
-}
-
-.info p {
-    background-color: #e5e5e5;
-    padding: 10px;
 }
 
 /* Estilos por defecto */
