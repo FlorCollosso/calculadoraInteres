@@ -6,25 +6,27 @@
 }
 
 body {
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     font-family: "Lato", sans-serif;
     color: #2c2c2f;
-    background-color: #2c2c2f;
+    overflow: hidden;
+    position: fixed;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: -1;
     background: radial-gradient(
-    circle,
-    #342c2c,
-    #2b2527,
-    #221f20,
-    #191819,
-    #111111
+        circle,
+        #342c2c,
+        #2b2527,
+        #221f20,
+        #191819,
+        #111111
     );
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    background-attachment: fixed;
 }
+
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -34,7 +36,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .imgPri {
     height: 5.5vw;
-    top: 50vh;
+    top: -18vh;
     left: 4vw;
     transform: rotateZ(270deg);
     position: relative;
@@ -42,7 +44,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .imgSec {
     height: 6vw;
-    top: 10vh;
+    top: 18vh;
     right: 3.7vw;
     transform: rotateZ(-270deg);
     position: relative;
@@ -50,14 +52,17 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .containerPrincipal {
     display: flex;
+    position: relative;
+    align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 100%;
 }
 
 .containerPrincipal > div {
     background-color: #ECECEC;
+    height: fit-content;
     width: 50%;
-    padding: 2vw;
+    padding: 3vw;
     border-radius: 30px;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
     animation: shadow 10s infinite ease-in-out;
@@ -322,22 +327,89 @@ input:focus-visible {
 
 /* Estilos por defecto */
 
-/* Estilos para laptops y dispositivos de mayor tamaño */
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+/* Estilos para monitores más pequeños */
+@media only screen and (min-width: 1440px) and (max-width: 1800px) {
+    .imgPri {
+        height: 7vw;
+        width: 16vw;
+        top: 1.5vw;
+        left: 18vw;
+        transform: rotateZ(0deg);
+        position: relative;
+    }
+    
+    .imgSec {
+        height: 8vw;
+        width: 18vw;
+        top: -1.3vw;
+        left: -18vw;
+        position: relative;
+        transform: rotateZ(-180deg);
+    }
+
     .containerPrincipal {
-        top: 15%;
         width: 100%;
+        position: relative;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .containerPrincipal > div {
         width: 60%;
+        padding: 3vw;
     }
 
     .info{
         width: 30vh;
         height: 50%;
         padding: 4vw;
-        margin: 3vw;
+        margin: 4vw;
+    }
+
+    .info h2 {
+        font-size: 20px;
+    }
+}
+
+/* Estilos para laptops y dispositivos de mayor tamaño */
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    .imgPri {
+        height: 10vw;
+        width: 20vw;
+        top: 2vw;
+        left: 20vw;
+        transform: rotateZ(0deg);
+        position: relative;
+    }
+    
+    .imgSec {
+        height: 10vw;
+        width: 20vw;
+        top: -1.8vw;
+        left: -20vw;
+        position: relative;
+        transform: rotateZ(-180deg);
+    }
+
+    .containerPrincipal {
+        width: 100%;
+        position: relative;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .containerPrincipal > div {
+        width: 70%;
+        padding: 5vw;
+    }
+
+    .info{
+        width: 30vh;
+        height: 50%;
+        padding: 4vw;
+        margin: 4vw;
     }
 
     .info h2 {
@@ -348,8 +420,8 @@ input:focus-visible {
   /* Estilos para tablets en posición horizontal y dispositivos de tamaño mediano */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .imgPri {
-        height: 12vw;
-        width: 26vw;
+        height: 10vw;
+        width: 22vw;
         top: 2vw;
         left: 20vw;
         transform: rotateZ(0deg);
@@ -357,9 +429,9 @@ input:focus-visible {
     }
     
     .imgSec {
-        height: 12vw;
-        width: 26vw;
-        top: -2vw;
+        height: 10vw;
+        width: 22vw;
+        top: -1.5vw;
         left: 45vw;
         position: relative;
         transform: rotateZ(-180deg);
@@ -375,7 +447,7 @@ input:focus-visible {
     
     .containerPrincipal > div {
         width: 75%;
-        padding: 3vw;
+        padding: 5vw;
     }
 
     .info{
@@ -392,35 +464,32 @@ input:focus-visible {
   
   /* Estilos para teléfonos y dispositivos de menor tamaño */
 @media only screen and (max-width: 767px) {
+
     .imgPri {
         height: 15vw;
-        width: 29vw;
+        width: 25vw;
         top: 2.5vw;
-        left: 25vw;
         transform: rotateZ(0deg);
-        position: relative;
     }
     
     .imgSec {
         height: 15vw;
         width: 29vw;
         top: -2.5vw;
-        left: 50vw;
-        position: relative;
         transform: rotateZ(-180deg);
     }
 
     .containerPrincipal {
         width: 100%;
-        left: 5%;
         position: relative;
+        align-items: center;
         flex-direction: column;
         justify-content: center;
     }
     
     .containerPrincipal > div {
         width: 85%;
-        padding: 3vw;
+        padding: 7vw;
     }
 
     h1 {

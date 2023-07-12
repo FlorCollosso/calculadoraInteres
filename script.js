@@ -109,6 +109,11 @@ function showError(input, errorMessage) {
 // Función cursor
 var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
+if (isTouchDevice) {
+  const cursor = document.querySelector('.cursor');
+  cursor.style.display = 'none';
+}
+
 if (!isTouchDevice) {
   document.addEventListener('mousemove', function (e) {
     var customCursor = document.querySelector('.cursor');
